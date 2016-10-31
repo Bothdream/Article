@@ -1,0 +1,49 @@
+<?php
+ require("../config.php");
+ require("../connect.php");
+ $selectSql="select * from aboutus where id=1";
+ $resultSet=mysql_query($selectSql,$link);
+ $result=mysql_fetch_assoc($resultSet);
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="name" content="content">
+	<title>关于我们</title>
+	<style type="text/css">
+	</style>
+  <link rel="stylesheet" type="text/css" href="../css/default.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<script type="text/javascript">
+        
+	</script>
+</head>
+<body>
+   <div class="admin">
+     <div class="webBack_wrap"><img src="../img/info.jpg" class="adminInfo"><h2 class="webBack">网站后台管理</h2></div>
+   	 <div class="admin_manage">
+   	    <div class="manage_nav">
+   	  	   <h3 class="manage_nav_title">文章管理</h3>
+   	  	   <a href="./article_add.php" class="deliver_article">发布文章</a>
+   	  	   <a href="./article_manage.php" class="manage_article">管理文章</a>
+           <a href="./aboutus_manage.php" class="manage_article">关于我们</a>
+           <a href="./contactus_manage.php" class="manage_article">联系我们</a>
+   	    </div>
+        <div class="manage_deliverArticle">
+      	    <h3>关于我们</h3>
+ <form action="./aboutus_modify_handle.php" method="post" accept-charset="utf-8">
+            <table style="width:100%;" border="1">         	
+<tr><td>
+    <textarea name="content" rows="10" cols="120"><?php echo $result['content']?></textarea>              
+</td><tr/>
+<tr ><td><input type="submit" name="submit" value="修改"/></td><tr/> 
+            </table>
+</form>            
+        </div>
+        <div class="clear"></div>
+   	 </div>  
+   </div>
+</body>
+</html>

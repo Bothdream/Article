@@ -1,0 +1,23 @@
+<?php
+ session_start();
+ header('content-type:image/png');
+ $img_width=70;
+ $img_height=18;
+ srand(microtime()*10000);
+ $new_number=null;
+ for($j=0;$j<4;$j++){
+ 	$new_number.=rand(0,9);
+ }
+ $_SESSION['check_checks']=$new_number;
+ $num_img=imagecreate($img_width,$img_height);
+ imagecolorallocate($num_img,255,255,255);
+ for($i=0;$i<strlen($_SESSION['check_checks']);$i++){
+   $font=mt_rand(3,5);
+   $x=mt_rand(1,8)+$img_width*$i/4;
+   $y=mt_rand(1,$img_height/4);
+   $color=imagecolorallocate($num_img,mt_rand(0,100),mt_rand(0,150),mt_rand(0,200));
+   imagestring($num_img,$font,$x,$y,$_SESSION['check_checks'][$i],$color);
+ }
+ imagepng($num_img,"./img.png");
+ imagedestroy($num_img);
+?>
