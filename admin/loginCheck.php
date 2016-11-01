@@ -1,9 +1,9 @@
 <?php
-   // 设置Session的失效时间:1分钟后失效
-   $time=60*1;
-   session_set_cookie_params($time);
    // 建立会话：用于临时存储随机产生的数字
    session_start();
+   // 设置Session的失效时间:1分钟后失效
+   $time=60*1;
+   setcookie(session_name(),session_id(),time()+$time,"/");
    // 产生一个四位的随机数
    // mt_rand()产生随机数的函数
    // dechex()将十进制数转换为十六进制数
