@@ -1,7 +1,8 @@
 <?php
+include '../system.class.inc.php';
+$db=new DB("localhost", "root","", "test");
+$db->createLink();
 // 对接收到的数据进行入库处理
-require("../configs.php");
-require("../connect.php");
 $title=$_POST['title'];
 $author=$_POST['author'];
 $description=$_POST['description'];
@@ -12,13 +13,13 @@ $insertSql='insert into article(title,author,description,content,dateline) value
 if(!isset($title)||empty($title)||!isset($content
 	)||empty($content)){
    echo "<script type='text/javascript' charset='utf-8'>
-   alert('标题或内容不能为空！');window.location.href='article_add.php';
+   alert('标题或内容不能为空！');window.location.href='./article_add.php';
    </script>";
 }else{
-	if(mysql_query($insertSql,$link)){
-       echo "<script type='text/javascript' charset='utf-8'>alert('文章发布成功！');window.location.href='article_add.php'; </script>";
+	if($result=$db->exectSql($insertSql)){
+       echo "<script type='text/javascript' charset='utf-8'>alert('文章发布成功！');window.location.href='./article_add.php'; </script>";
 	}else{
-       echo "<script type='text/javascript' charset='utf-8'>alert('文章发布失败！');window.location.href='article_add.php';</script>";
+       echo "<script type='text/javascript' charset='utf-8'>alert('文章发布失败！');window.location.href='./article_add.php';</script>";
 	}
 }
 ?>
