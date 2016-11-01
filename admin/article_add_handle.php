@@ -1,6 +1,6 @@
 <?php
 // 对接收到的数据进行入库处理
-require("../config.php");
+require("../configs.php");
 require("../connect.php");
 $title=$_POST['title'];
 $author=$_POST['author'];

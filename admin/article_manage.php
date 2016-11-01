@@ -1,5 +1,5 @@
 <?php
- require("../config.php");
+ require("../configs.php");
  require("../connect.php");
 // 每页显示5条信息
  // limit ($page-1)*$pageSize,$pageSize

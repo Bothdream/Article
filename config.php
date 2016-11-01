@@ -1,8 +1,18 @@
 <?php 
-// æ•°æ®åº“çš„è¿žæŽ¥åœ°å€
-$url="localhost";
-// ç”¨æˆ·å
-$username="root";
-// å¯†ç 
-$pwd="";
- ?>
+   //¶¨Òå·þÎñÆ÷µÄ¾ø¶ÔÂ·¾¶
+   define('BATH_PATH', $_SERVER['DOCUMENT_ROOT']);
+   //¶¨ÒåSmartyµÄÄ¿Â¼µÄ¾ø¶ÔÂ·¾¶
+   define('SMARTY_PATH', '/articleDeliver/libs/');
+   //¼ÓÔØÀàÎÄ¼þ
+   require BATH_PATH.SMARTY_PATH.'Smarty.class.php';
+   //³õÊ¼»¯Ò»¸ösmarty¶ÔÏó
+   $smarty=new Smarty;
+   //¶¨Òå¸÷¸öÄ¿Â¼µÄÂ·¾¶
+   $smarty->template_dir= BATH_PATH.SMARTY_PATH."templates/";
+   $smarty->cache_dir= BATH_PATH.SMARTY_PATH."cache/";
+   $smarty->config_dir= BATH_PATH.SMARTY_PATH."configs/";
+   $smarty->compile_dir= BATH_PATH.SMARTY_PATH."templates_c/";
+   // ¿ªÆô»º´æ
+   //$smarty->caching=true;
+   //$smarty->cache_lifetime=60;
+?>

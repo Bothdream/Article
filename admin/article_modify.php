@@ -1,5 +1,5 @@
 <?php
- require("../config.php");
+ require("../configs.php");
  require("../connect.php");
  //使用get请求动态修改文章
  $id=$_GET['id'];

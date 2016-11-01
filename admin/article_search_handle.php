@@ -1,6 +1,6 @@
 <?php 
  $search_content=$_POST['search_content'];
- require("../config.php");
+ require("../configs.php");
  require("../connect.php");
  $searchSql="select * from article where content like '%$search_content%'";
  ?>

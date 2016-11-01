@@ -1,5 +1,5 @@
 <?php
- require("../config.php");
+ require("../configs.php");
  require("../connect.php");
  $selectSql="select * from contactus where id=1";
  $resultSet=mysql_query($selectSql,$link);

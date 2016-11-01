@@ -1,5 +1,5 @@
 <?php
-  require("../config.php");
+  require("../configs.php");
   require("../connect.php");
   // 剔除空格
   $userName=trim($_POST['userName']);

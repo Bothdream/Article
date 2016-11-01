@@ -1,5 +1,5 @@
 <?php
- require("../config.php");
+ require("../configs.php");
  require("../connect.php");
  // 采用请求动态删除指定的文章
  $id=$_GET['id'];

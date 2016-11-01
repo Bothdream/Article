@@ -1,5 +1,5 @@
 <?php 
-require("../config.php");
+require("../configs.php");
 require("../connect.php");
 // 获取相关的文章信息
 $id=$_POST['id'];
